@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SR Investment Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-pink-500 via-pink-600 to-violet-600 flex items-center justify-center text-white font-black shadow-lg shadow-pink-200">SR</div>
+        <h1 class="text-xl sm:text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-violet-600">SR Investment</h1>
+      </div>
+
+      <nav class="nav-links flex items-center justify-center gap-2 sm:gap-4 text-sm sm:text-base">
+        <a href="#overview" class="text-slate-600 hover:text-pink-600 transition">Overview</a>
+        <a href="#rules" class="text-slate-600 hover:text-pink-600 transition">Rules</a>
+        <a href="#calculator" class="text-slate-600 hover:text-pink-600 transition">Calculator</a>
+        <a href="#faq" class="text-slate-600 hover:text-pink-600 transition">FAQ</a>
+        <a href="#" class="text-slate-600 hover:text-pink-600 transition">Login</a>
+        <a href="#" class="bg-gradient-to-r from-pink-600 to-violet-600 text-white px-4 sm:px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-pink-200 transition hover:scale-[1.02]">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative overflow-hidden bg-gradient-to-br from-pink-600 via-pink-500 to-violet-700 text-white">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.18),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.12),transparent_30%)]"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-18 lg:py-24">
+        <div class="grid lg:grid-cols-[1.3fr_0.7fr] gap-8 lg:gap-12 items-center">
+          <div>
+            <div class="hero-badge inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[11px] sm:text-xs font-semibold tracking-[0.18em] uppercase text-pink-50">
+              Verified Investor Network
+            </div>
+            <h2 class="mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-[-0.04em] max-w-3xl">
+              A Transparent &amp; Reliable Investment Management Platform
+            </h2>
+            <p class="mt-5 max-w-xl text-base sm:text-lg text-pink-50 leading-relaxed">
+              Track your investments, calculate fixed 30-day returns, and manage instant withdrawals with enterprise-grade security.
+            </p>
+
+            <div class="cta-group mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <a href="#" class="inline-flex justify-center items-center bg-white text-pink-600 px-6 py-3.5 rounded-xl font-semibold shadow-xl hover:bg-slate-100 transition">Create Verified Account</a>
+              <a href="#" class="inline-flex justify-center items-center border border-white/40 text-white px-6 py-3.5 rounded-xl font-semibold hover:bg-white/10 transition">Login to Dashboard</a>
+            </div>
+
+            <div class="mt-8 flex flex-wrap gap-2 sm:gap-3 text-xs sm:text-sm">
+              <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 border border-white/20">
+                <span class="text-base">✓</span> Fixed 7% Profit Every 30 Days
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 border border-white/20">
+                <span class="text-base">✓</span> Flexible Withdrawal
+              </span>
+              <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 border border-white/20">
+                <span class="text-base">✓</span> Direct Crypto Settlement
+              </span>
+            </div>
+          </div>
+
+          <div class="premium-shadow glass-panel soft-border rounded-[28px] p-4 sm:p-5">
+            <div class="rounded-[22px] bg-white p-5 sm:p-6 text-slate-800">
+              <p class="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-slate-500 font-bold">Investment Snapshot</p>
+              <div class="mt-6 space-y-5">
+                <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+                  <span class="text-slate-500">Min Investment</span>
+                  <span class="font-black text-lg">$300</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+                  <span class="text-slate-500">Monthly Profit</span>
+                  <span class="font-black text-lg text-pink-600">7% / 30 Days</span>
+                </div>
+                <div class="flex justify-between items-center border-b border-slate-200 pb-3">
+                  <span class="text-slate-500">Withdrawal</span>
+                  <span class="font-black text-lg">1 Business Day</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-slate-500">Settlement</span>
+                  <span class="font-black text-base sm:text-lg">Binance Pay / USDT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="bg-white py-12 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          <div class="group bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <p class="text-xs sm:text-sm uppercase tracking-[0.12em] text-slate-500">Min Investment</p>
+            <p class="mt-3 text-3xl font-black text-slate-900">$300</p>
+          </div>
+          <div class="group bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <p class="text-xs sm:text-sm uppercase tracking-[0.12em] text-slate-500">Monthly Profit Rate</p>
+            <p class="mt-3 text-3xl font-black text-pink-600">7%</p>
+          </div>
+          <div class="group bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <p class="text-xs sm:text-sm uppercase tracking-[0.12em] text-slate-500">Withdrawal Processing</p>
+            <p class="mt-3 text-3xl font-black text-slate-900">1 Day</p>
+          </div>
+          <div class="group bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <p class="text-xs sm:text-sm uppercase tracking-[0.12em] text-slate-500">Payment Gateways</p>
+            <p class="mt-3 text-lg font-black text-slate-900">Binance Pay &amp; USDT</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules" class="bg-slate-100 py-14 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <p class="text-pink-600 font-bold uppercase tracking-[0.2em] text-[11px]">Business Logic</p>
+          <h3 class="mt-3 text-3xl sm:text-4xl font-black text-slate-900">How Your Investment &amp; Returns Work</h3>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5 sm:gap-6">
+          <div class="bg-white rounded-[26px] border border-slate-200 shadow-sm p-6 sm:p-8 hover:shadow-lg transition">
+            <div class="text-pink-600 font-black text-2xl mb-3">30-Day Cycle Activation</div>
+            <p class="text-slate-600 leading-relaxed">
+              Once your investment is activated, the 30-day cycle begins from the day of deposit. After the full cycle is completed, your profit is credited automatically to your wallet balance.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-[26px] border border-slate-200 shadow-sm p-6 sm:p-8 hover:shadow-lg transition">
+            <div class="text-pink-600 font-black text-2xl mb-3">Flat 7% Profit</div>
+            <p class="text-slate-600 leading-relaxed">
+              Profit is always calculated on your active Current Investment only. This is a non-compounding model, meaning there is no extra growth added on previously earned profit unless it remains active as part of the current investment balance.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-[26px] border border-slate-200 shadow-sm p-6 sm:p-8 hover:shadow-lg transition">
+            <div class="text-pink-600 font-black text-2xl mb-3">Capital Flexibility</div>
+            <p class="text-slate-600 leading-relaxed">
+              You may keep your profit in the account without receiving additional interest. Your principal capital remains protected and continues to serve as the active investment base for the next cycle.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-[26px] border border-slate-200 shadow-sm p-6 sm:p-8 hover:shadow-lg transition">
+            <div class="text-pink-600 font-black text-2xl mb-3">Smart Withdrawal Order</div>
+            <p class="text-slate-600 leading-relaxed">
+              During any withdrawal request, the system automatically deducts from profit first, and if required, the remaining portion is deducted from capital. This keeps transactions transparent and orderly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="calculator" class="bg-white py-14 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <p class="text-pink-600 font-bold uppercase tracking-[0.2em] text-[11px]">Interactive Forecast</p>
+          <h3 class="mt-3 text-3xl sm:text-4xl font-black text-slate-900">Calculate Your Monthly Returns</h3>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+          <div class="bg-slate-50 border border-slate-200 rounded-[28px] p-5 sm:p-8 shadow-sm">
+            <label for="investmentRange" class="block text-sm font-semibold text-slate-600 mb-3">Investment Amount</label>
+            <div class="mb-5">
+              <input id="investmentRange" type="range" min="300" max="10000" step="50" value="1000" class="w-full">
+            </div>
+            <div>
+              <input id="investmentInput" type="number" min="300" step="50" value="1000" class="w-full border border-slate-300 rounded-xl p-3.5 text-lg font-semibold text-slate-900 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500" aria-label="Investment amount">
+            </div>
+            <div class="mt-6 rounded-2xl bg-white border border-slate-200 p-4 text-sm text-slate-600">
+              <p>Minimum investment: <strong>$300</strong></p>
+              <p class="mt-1">Suggested amount increments: <strong>$50 / $100</strong></p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-pink-600 via-pink-600 to-violet-600 text-white rounded-[28px] p-5 sm:p-8 shadow-2xl shadow-pink-200">
+            <p class="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-pink-100 font-bold">Projected Return</p>
+            <div class="mt-6 sm:mt-8 space-y-6">
+              <div>
+                <p class="text-pink-100 text-sm">Current Investment</p>
+                <p id="currentInvestment" class="text-3xl font-black mt-2">$1,000.00</p>
+              </div>
+              <div>
+                <p class="text-pink-100 text-sm">Est. Monthly Return (7%)</p>
+                <p id="monthlyReturn" class="text-3xl font-black mt-2">$70.00</p>
+              </div>
+              <div>
+                <p class="text-pink-100 text-sm">Cycle Duration</p>
+                <p class="text-3xl font-black mt-2">30 Days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-6 text-center text-sm text-slate-500">
+          Profit is non-compounding and calculated strictly on active Current Investment.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-slate-100 py-14 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <p class="text-pink-600 font-bold uppercase tracking-[0.2em] text-[11px]">Onboarding Flow</p>
+          <h3 class="mt-3 text-3xl sm:text-4xl font-black text-slate-900">How It Works</h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
+          <div class="bg-white rounded-[26px] border border-slate-200 p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <div class="w-11 h-11 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center font-black text-lg mb-4">1</div>
+            <h4 class="text-xl font-black text-slate-900">Account &amp; KYC Verification</h4>
+            <p class="mt-3 text-slate-600 leading-relaxed">Complete Email &amp; Phone OTP verification and submit your NID or Passport for secure identity confirmation.</p>
+          </div>
+
+          <div class="bg-white rounded-[26px] border border-slate-200 p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <div class="w-11 h-11 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center font-black text-lg mb-4">2</div>
+            <h4 class="text-xl font-black text-slate-900">Make Investment</h4>
+            <p class="mt-3 text-slate-600 leading-relaxed">Deposit a minimum of $300 via Binance Pay or USDT (TRC20) to activate your investment cycle.</p>
+          </div>
+
+          <div class="bg-white rounded-[26px] border border-slate-200 p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <div class="w-11 h-11 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center font-black text-lg mb-4">3</div>
+            <h4 class="text-xl font-black text-slate-900">Track &amp; Earn Profit</h4>
+            <p class="mt-3 text-slate-600 leading-relaxed">After each full 30-day cycle, your dashboard shows automatic 7% profit credit to your active investment balance.</p>
+          </div>
+
+          <div class="bg-white rounded-[26px] border border-slate-200 p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <div class="w-11 h-11 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center font-black text-lg mb-4">4</div>
+            <h4 class="text-xl font-black text-slate-900">Request Withdrawal</h4>
+            <p class="mt-3 text-slate-600 leading-relaxed">Submit your withdrawal after the initial 3 business day lock-in period, with processing completed within 1 business day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-14 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <p class="text-pink-600 font-bold uppercase tracking-[0.2em] text-[11px]">Security &amp; Compliance</p>
+          <h3 class="mt-3 text-3xl sm:text-4xl font-black text-slate-900">Bank-Grade Security &amp; Ledger Tracking</h3>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5">
+          <div class="bg-slate-50 border border-slate-200 rounded-[26px] p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <div class="text-3xl mb-3">🔐</div>
+            <h4 class="text-xl font-black text-slate-900">Dual-Layer OTP Security</h4>
+            <p class="mt-3 text-slate-600 leading-relaxed">Login and withdrawal requests are protected by Email and Phone OTP confirmations.</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-[26px] p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <div class="text-3xl mb-3">🗂️</div>
+            <h4 class="text-xl font-black text-slate-900">Encrypted KYC Documents</h4>
+            <p class="mt-3 text-slate-600 leading-relaxed">NID and Passport data are stored in encrypted form with controlled access and audit trails.</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-[26px] p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <div class="text-3xl mb-3">📘</div>
+            <h4 class="text-xl font-black text-slate-900">Immutable Double-Entry Ledger</h4>
+            <p class="mt-3 text-slate-600 leading-relaxed">Every capital movement, profit entry, and withdrawal is recorded with precise back-end accounting.</p>
+          </div>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-[26px] p-5 sm:p-6 shadow-sm hover:shadow-lg transition">
+            <div class="text-3xl mb-3">⚡</div>
+            <h4 class="text-xl font-black text-slate-900">Automated Payment Verification</h4>
+            <p class="mt-3 text-slate-600 leading-relaxed">Binance Pay API and direct payment verification enable instant membership activation and secure settlement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="bg-slate-100 py-14 sm:py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-10">
+          <p class="text-pink-600 font-bold uppercase tracking-[0.2em] text-[11px]">Investor FAQs</p>
+          <h3 class="mt-3 text-3xl sm:text-4xl font-black text-slate-900">Frequently Asked Questions</h3>
+        </div>
+
+        <div class="space-y-4">
+          <details class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm" open>
+            <summary class="cursor-pointer font-bold text-slate-900">Q: আমি কি পরবর্তীতে অতিরিক্ত টাকা ইনভেস্ট করতে পারব?</summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">Ans: হ্যাঁ, আপনি যেকোনো সময় অতিরিক্ত ডিপোজিট করতে পারবেন। উদাহরণস্বরূপ: $300 + $230 = $530। আপনার পরবর্তী প্রফিট সম্পূর্ণ $530 ডলারের ওপর 7% হিসেবে গণনা হবে।</p>
+          </details>
+
+          <details class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
+            <summary class="cursor-pointer font-bold text-slate-900">Q: উইথড্রয়াল-এর নিয়ম কী?</summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">Ans: প্রথম ইনভেস্টমেন্টের 3 কর্মদিবস পর আপনি যেকোনো সময় উইথড্রয়াল রিকোয়েস্ট জমা দিতে পারবেন। সিস্টেম প্রথমে প্রফিট থেকে কেটে নেবে এবং প্রয়োজন হলে বাকি অংশ মূলধন থেকে কেটে নেবে।</p>
+          </details>
+
+          <details class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
+            <summary class="cursor-pointer font-bold text-slate-900">Q: আমার জমানো প্রফিট কি অটোমেটিক কম্পাউন্ড (Compound) হবে?</summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">Ans: না। প্রফিট আপনার ড্যাশবোর্ডে জমা থাকলেও মাসিক 7% লাভ শুধুমাত্র আপনার সক্রিয় Current Investment-এর ওপর প্রযোজ্য হবে। এটি Non-compounding মডেল।</p>
+          </details>
+
+          <details class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
+            <summary class="cursor-pointer font-bold text-slate-900">Q: আমি কি KYC ছাড়া অ্যাকাউন্ট খুলতে পারব?</summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">Ans: না। এই প্ল্যাটফর্মটি পরিচিত ও ভেরিফাইড ইনভেস্টরদের জন্য ডিজাইন করা হয়েছে, তাই অ্যাকাউন্ট তৈরি ও জমা/উইথড্রয়াল আপনার KYC যাচাই সম্পূর্ণ হওয়ার আগে সম্পন্ন হয় না।</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gradient-to-r from-pink-600 via-pink-600 to-violet-700 text-white py-14 sm:py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+        <h3 class="text-3xl sm:text-4xl font-black leading-tight">Ready to Manage Your Investments with SR Platform?</h3>
+        <p class="mt-4 text-pink-100 text-base sm:text-lg">Transparent rules, secure verification, and reliable monthly performance.</p>
+        <div class="mt-8 flex justify-center">
+          <a href="#" class="inline-flex items-center justify-center bg-white text-pink-600 px-7 py-3.5 rounded-xl font-bold hover:bg-slate-100 transition shadow-xl">Start Your Account Verification</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-5">
+      <p class="text-center md:text-left">© 2026 SR Investment Platform. All rights reserved.</p>
+      <div class="flex flex-wrap justify-center gap-4 sm:gap-5 text-sm">
+        <a href="#" class="hover:text-white transition">Terms of Service</a>
+        <a href="#" class="hover:text-white transition">Investment Policy</a>
+        <a href="#" class="hover:text-white transition">Privacy &amp; Data Protection</a>
+        <a href="#" class="hover:text-white transition">Support / Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const investmentRange = document.getElementById('investmentRange');
+    const investmentInput = document.getElementById('investmentInput');
+    const currentInvestment = document.getElementById('currentInvestment');
+    const monthlyReturn = document.getElementById('monthlyReturn');
+
+    function formatMoney(value) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(value);
+    }
+
+    function updateCalculator(value) {
+      const amount = Math.max(300, Number(value) || 300);
+      const safeAmount = Math.round(amount / 50) * 50;
+      investmentRange.value = safeAmount;
+      investmentInput.value = safeAmount;
+      const returnValue = safeAmount * 0.07;
+      currentInvestment.textContent = formatMoney(safeAmount);
+      monthlyReturn.textContent = formatMoney(returnValue);
+      const percentage = ((safeAmount - 300) / (10000 - 300)) * 100;
+      investmentRange.style.setProperty('--fill', `${Math.max(0, Math.min(100, percentage))}%`);
+    }
+
+    investmentRange.addEventListener('input', (event) => {
+      updateCalculator(event.target.value);
+    });
+
+    investmentInput.addEventListener('input', (event) => {
+      updateCalculator(event.target.value);
+    });
+
+    updateCalculator(1000);
+  </script>
+
+</body>
+</html>

@@ -277,23 +277,23 @@
 
         <div class="space-y-4">
           <details class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm" open>
-            <summary class="cursor-pointer font-bold text-slate-900">Q: আমি কি পরবর্তীতে অতিরিক্ত টাকা ইনভেস্ট করতে পারব?</summary>
-            <p class="mt-3 text-slate-600 leading-relaxed">Ans: হ্যাঁ, আপনি যেকোনো সময় অতিরিক্ত ডিপোজিট করতে পারবেন। উদাহরণস্বরূপ: $300 + $230 = $530। আপনার পরবর্তী প্রফিট সম্পূর্ণ $530 ডলারের ওপর 7% হিসেবে গণনা হবে।</p>
+            <summary class="cursor-pointer font-bold text-slate-900">Q: Can I invest additional funds later?</summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">Ans: Yes, you can make extra deposits at any time. For example: $300 + $230 = $530. Your next profit will be calculated at 7% on the full $530 investment.</p>
           </details>
 
           <details class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
-            <summary class="cursor-pointer font-bold text-slate-900">Q: উইথড্রয়াল-এর নিয়ম কী?</summary>
-            <p class="mt-3 text-slate-600 leading-relaxed">Ans: প্রথম ইনভেস্টমেন্টের 3 কর্মদিবস পর আপনি যেকোনো সময় উইথড্রয়াল রিকোয়েস্ট জমা দিতে পারবেন। সিস্টেম প্রথমে প্রফিট থেকে কেটে নেবে এবং প্রয়োজন হলে বাকি অংশ মূলধন থেকে কেটে নেবে।</p>
+            <summary class="cursor-pointer font-bold text-slate-900">Q: What is the withdrawal policy?</summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">Ans: After 3 business days from the initial investment, you can submit a withdrawal request at any time. The system will deduct from profit first, and if needed, the remaining amount will be deducted from the capital.</p>
           </details>
 
           <details class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
-            <summary class="cursor-pointer font-bold text-slate-900">Q: আমার জমানো প্রফিট কি অটোমেটিক কম্পাউন্ড (Compound) হবে?</summary>
-            <p class="mt-3 text-slate-600 leading-relaxed">Ans: না। প্রফিট আপনার ড্যাশবোর্ডে জমা থাকলেও মাসিক 7% লাভ শুধুমাত্র আপনার সক্রিয় Current Investment-এর ওপর প্রযোজ্য হবে। এটি Non-compounding মডেল।</p>
+            <summary class="cursor-pointer font-bold text-slate-900">Q: Will my accumulated profit be automatically compounded?</summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">Ans: No. Even if profit is accumulated in your dashboard, the monthly 7% return applies only to your active Current Investment. This is a non-compounding model.</p>
           </details>
 
           <details class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
-            <summary class="cursor-pointer font-bold text-slate-900">Q: আমি কি KYC ছাড়া অ্যাকাউন্ট খুলতে পারব?</summary>
-            <p class="mt-3 text-slate-600 leading-relaxed">Ans: না। এই প্ল্যাটফর্মটি পরিচিত ও ভেরিফাইড ইনভেস্টরদের জন্য ডিজাইন করা হয়েছে, তাই অ্যাকাউন্ট তৈরি ও জমা/উইথড্রয়াল আপনার KYC যাচাই সম্পূর্ণ হওয়ার আগে সম্পন্ন হয় না।</p>
+            <summary class="cursor-pointer font-bold text-slate-900">Q: Can I open an account without KYC?</summary>
+            <p class="mt-3 text-slate-600 leading-relaxed">Ans: No. This platform is designed for known and verified investors, so account creation and deposits/withdrawals are completed only after KYC verification is successfully completed.</p>
           </details>
         </div>
       </div>
@@ -322,43 +322,7 @@
     </div>
   </footer>
 
-  <script>
-    const investmentRange = document.getElementById('investmentRange');
-    const investmentInput = document.getElementById('investmentInput');
-    const currentInvestment = document.getElementById('currentInvestment');
-    const monthlyReturn = document.getElementById('monthlyReturn');
-
-    function formatMoney(value) {
-      return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      }).format(value);
-    }
-
-    function updateCalculator(value) {
-      const amount = Math.max(300, Number(value) || 300);
-      const safeAmount = Math.round(amount / 50) * 50;
-      investmentRange.value = safeAmount;
-      investmentInput.value = safeAmount;
-      const returnValue = safeAmount * 0.07;
-      currentInvestment.textContent = formatMoney(safeAmount);
-      monthlyReturn.textContent = formatMoney(returnValue);
-      const percentage = ((safeAmount - 300) / (10000 - 300)) * 100;
-      investmentRange.style.setProperty('--fill', `${Math.max(0, Math.min(100, percentage))}%`);
-    }
-
-    investmentRange.addEventListener('input', (event) => {
-      updateCalculator(event.target.value);
-    });
-
-    investmentInput.addEventListener('input', (event) => {
-      updateCalculator(event.target.value);
-    });
-
-    updateCalculator(1000);
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>

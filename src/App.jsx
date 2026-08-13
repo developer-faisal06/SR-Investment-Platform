@@ -1,33 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import Home from './components/Home'
-import Login from './components/Login'
-import Register from './components/Register'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Home from './components/Home/home'
+import Login from './components/Login/login'
+import Register from './components/Register/register'
+import Header from './components/Header/header'
+import Footer from './components/Footer/footer'
 
 export default function App(){
-  const [route, setRoute] = useState(window.location.pathname || '/')
-
-  useEffect(()=>{
-    const onPop = ()=> setRoute(window.location.pathname)
-    window.addEventListener('popstate', onPop)
-    return ()=> window.removeEventListener('popstate', onPop)
-  },[])
-
-  const navigate = (path)=>{
-    window.history.pushState({},'',path)
-    setRoute(path)
-  }
-
   return (
     <div>
-      <Header navigate={navigate} />
+      <Header />
 
       <main>
-        {route === '/' && <Home navigate={navigate} />}
-        {route === '/login' && <Login navigate={navigate} />}
-        {route === '/register' && <Register navigate={navigate} />}
-        {/* Other in-page anchors (rules, calculator) can render Home and scroll to sections if needed */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
       </main>
 
       <Footer />

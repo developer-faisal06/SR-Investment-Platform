@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export default function Header({ navigate }){
+export default function Header(){
+  const navigate = useNavigate()
   const goAndScroll = (path, id)=>{
     navigate(path)
     setTimeout(()=>{

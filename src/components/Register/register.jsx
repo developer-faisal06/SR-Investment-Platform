@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export default function Register({ navigate }){
+export default function Register(){
+  const navigate = useNavigate()
   const onSubmit = (e)=>{
     e.preventDefault()
     const pw = e.target.password.value

@@ -13,7 +13,7 @@ function formatMoney(value) {
 }
 
 function updateCalculator(value) {
-  const amount = Math.max(300, Number(value) || 300);
+  const amount = Math.max(200, Number(value) || 200);
   const safeAmount = Math.round(amount / 50) * 50;
 
   if (investmentRange) {
@@ -35,7 +35,7 @@ function updateCalculator(value) {
   }
 
   if (investmentRange) {
-    const percentage = ((safeAmount - 300) / (10000 - 300)) * 100;
+    const percentage = ((safeAmount - 200) / (10000 - 200)) * 100;
     investmentRange.style.setProperty('--fill', `${Math.max(0, Math.min(100, percentage))}%`);
   }
 }

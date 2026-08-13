@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import CheckoutLayout from '../Checkout/CheckoutLayout'
+import OrderSummary from '../Checkout/OrderSummary'
+import PaymentDetails from '../Checkout/PaymentDetails'
+import ConfirmAction from '../Checkout/ConfirmAction'
 
 export default function Checkout(){
   const location = useLocation()
@@ -18,7 +22,6 @@ export default function Checkout(){
   }, [payload])
 
   const confirm = ()=>{
-    // demo: mark deposit as recorded and clear pending
     const deposits = JSON.parse(localStorage.getItem('sr_deposits') || '[]')
     deposits.push({ ...payload, date: new Date().toISOString(), status: 'completed' })
     localStorage.setItem('sr_deposits', JSON.stringify(deposits))
@@ -35,20 +38,22 @@ export default function Checkout(){
   )
 
   return (
-    <main className="max-w-3xl mx-auto my-12 p-6 bg-white rounded-2xl shadow text-slate-800">
-      <h2 className="text-2xl font-extrabold mb-3">Checkout</h2>
-      <p className="text-sm text-slate-600">Review your deposit details and confirm to proceed. (Demo flow)</p>
-
-      <div className="mt-6 bg-slate-50 p-4 rounded-lg">
-        <div className="flex justify-between"><div className="text-sm text-slate-600">Plan</div><div className="font-bold">{payload.planTitle}</div></div>
-        <div className="flex justify-between mt-2"><div className="text-sm text-slate-600">Amount</div><div className="font-bold">${Number(payload.amount).toLocaleString()}</div></div>
-        <div className="flex justify-between mt-2"><div className="text-sm text-slate-600">Estimated Monthly (7%)</div><div className="font-bold text-emerald-600">${(Number(payload.amount)*0.07).toFixed(2)}</div></div>
+    <div>
+      <div className="max-w-3xl mx-auto my-8 px-4">
+        <h2 className="text-2xl font-extrabold">Checkout</h2>
+        <p className="text-sm text-slate-600">Review and confirm your deposit. Demo flow only.</p>
       </div>
 
-      <div className="mt-6 flex gap-3">
-        <button onClick={confirm} className="px-4 py-3 bg-emerald-600 text-white rounded-lg font-semibold">Confirm Deposit</button>
-        <button onClick={()=>navigate(-1)} className="px-4 py-3 border rounded-lg">Back</button>
+      <CheckoutLayout
+        left={<>
+          <PaymentDetails payload={payload} setPayload={setPayload} />
+        </>}
+        right={<OrderSummary payload={payload} />}
+      />
+
+      <div className="max-w-5xl mx-auto px-4 mt-6">
+        <ConfirmAction onConfirm={confirm} onCancel={()=>navigate(-1)} />
       </div>
-    </main>
+    </div>
   )
 }

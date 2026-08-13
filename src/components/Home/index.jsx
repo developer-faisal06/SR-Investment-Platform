@@ -12,7 +12,7 @@ export default function Home({ navigate }){
   const monthly = safeAmount * 0.07
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-pink-600 via-pink-500 to-violet-700 text-white">
+    <section id="overview" className="relative overflow-hidden bg-gradient-to-br from-pink-600 via-pink-500 to-violet-700 text-white">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-14 sm:py-18 lg:py-24">
         <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-8 lg:gap-12 items-start">
           <div>
@@ -74,6 +74,16 @@ export default function Home({ navigate }){
             </div>
           </div>
         </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+        <section id="rules" className="bg-white rounded-2xl p-6 text-slate-800 shadow mt-8">
+          <h3 className="text-xl font-bold mb-3">Rules & Terms</h3>
+          <ul className="list-disc pl-5 text-sm space-y-2">
+            <li>Minimum deposit is <strong>$200</strong>.</li>
+            <li>Fixed 7% profit every 30 days for active cycles.</li>
+            <li>Withdrawals subject to verification and fees as stated.</li>
+          </ul>
+        </section>
       </div>
     </section>
   )

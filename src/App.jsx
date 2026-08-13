@@ -13,6 +13,7 @@ import InvestmentPlans from './components/Pages/InvestmentPlans'
 import Withdrawal from './components/Pages/Withdrawal'
 import KycSecurity from './components/Pages/KycSecurity'
 import Support from './components/Pages/Support'
+import Checkout from './components/Pages/Checkout'
 
 export default function App(){
   return (
@@ -32,6 +33,7 @@ export default function App(){
           <Route path="/withdrawal" element={<Withdrawal />} />
           <Route path="/kyc-security" element={<KycSecurity />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

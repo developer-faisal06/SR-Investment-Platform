@@ -108,8 +108,18 @@ export default function Register(){
 
   const submitRegistration = ()=>{
     if(!validateStep(4)) return
-    // frontend-only: clear saved form and show success
+    // frontend-only: create a simple user record and clear saved form
+    const user = { name: form.name, email: form.email, phone: form.phone }
+    localStorage.setItem('sr_user', JSON.stringify(user))
+    localStorage.setItem('sr_user_logged_in', '1')
     localStorage.removeItem('sr_reg_form')
+
+    // if there's a pending deposit, go to checkout
+    const pending = localStorage.getItem('pending_deposit')
+    if(pending){
+      navigate('/checkout')
+      return
+    }
     setStep(5)
   }
 

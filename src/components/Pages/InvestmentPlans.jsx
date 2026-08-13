@@ -13,9 +13,19 @@ export default function InvestmentPlans(){
   const safeAmount = Math.max(200, Math.round(Number(amount || 0)/50)*50)
   const monthly = +(safeAmount * 0.07).toFixed(2)
 
-  const deposit = (plan)=>{
-    // demo: navigate to register with prefilled amount (client-side only)
-    alert(`Demo deposit: $${safeAmount} into ${plan.title} plan. Proceed to registration.`)
+  const [selectedPlan, setSelectedPlan] = useState('standard')
+
+  const deposit = (planKey)=>{
+    const plan = plans.find(p=>p.key===planKey) || plans[1]
+    const user = localStorage.getItem('sr_user')
+    const payload = { amount: safeAmount, plan: plan.key, planTitle: plan.title }
+    if(user){
+      // user exists — go to checkout with state
+      navigate('/checkout', { state: payload })
+      return
+    }
+    // store pending deposit then redirect to register
+    localStorage.setItem('pending_deposit', JSON.stringify(payload))
     navigate('/register')
   }
 
@@ -33,7 +43,7 @@ export default function InvestmentPlans(){
                 <div className="text-2xl font-extrabold mt-2">${p.min.toLocaleString()}</div>
                 <div className="text-xs text-slate-600 mt-2">{p.note}</div>
                 <div className="mt-4">
-                  <button onClick={()=>deposit(p)} className="w-full px-4 py-2 bg-pink-600 text-white rounded-lg font-semibold">Deposit to {p.title}</button>
+                  <button onClick={()=>deposit(p.key)} className="w-full px-4 py-2 bg-pink-600 text-white rounded-lg font-semibold">Deposit to {p.title}</button>
                 </div>
               </div>
             ))}
@@ -73,7 +83,7 @@ export default function InvestmentPlans(){
 
           <div className="mt-4">
             <label className="text-sm text-slate-600">Choose plan for deposit</label>
-            <select className="w-full mt-2 p-3 border rounded-lg" defaultValue="standard">
+            <select value={selectedPlan} onChange={e=>setSelectedPlan(e.target.value)} className="w-full mt-2 p-3 border rounded-lg">
               <option value="basic">Basic — from $200</option>
               <option value="standard">Standard — from $1,000</option>
               <option value="premium">Premium — from $5,000</option>
@@ -81,8 +91,7 @@ export default function InvestmentPlans(){
           </div>
 
           <div className="mt-6 flex gap-3">
-            <button onClick={()=>alert('Demo deposit flow — integrate payment gateway')} className="flex-1 px-4 py-3 bg-pink-600 text-white rounded-lg font-semibold">Deposit Now</button>
-            <button onClick={()=>navigate('/register')} className="px-4 py-3 border rounded-lg">Open Account</button>
+            <button onClick={()=>deposit(selectedPlan)} className="flex-1 px-4 py-3 bg-pink-600 text-white rounded-lg font-semibold">Deposit Now</button>
           </div>
 
           <div className="mt-4 text-xs text-slate-500">Minimum deposit: $200. Deposits are subject to verification and settlement times.</div>

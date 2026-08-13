@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Footer(){
   return (
@@ -19,18 +20,18 @@ export default function Footer(){
           <div>
             <h4 className="text-sm font-semibold text-white mb-3">Products</h4>
             <ul className="space-y-2 text-slate-400 text-sm">
-              <li><a className="hover:text-white" href="#">Investment Plans</a></li>
-              <li><a className="hover:text-white" href="#">Withdrawal</a></li>
-              <li><a className="hover:text-white" href="#">KYC & Security</a></li>
+              <li><Link className="hover:text-white" to="/plans">Investment Plans</Link></li>
+              <li><Link className="hover:text-white" to="/withdrawal">Withdrawal</Link></li>
+              <li><Link className="hover:text-white" to="/kyc-security">KYC & Security</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-sm font-semibold text-white mb-3">Company</h4>
             <ul className="space-y-2 text-slate-400 text-sm">
-              <li><a className="hover:text-white" href="#">About Us</a></li>
-              <li><a className="hover:text-white" href="#">Terms</a></li>
-              <li><a className="hover:text-white" href="#">Privacy</a></li>
+              <li><Link className="hover:text-white" to="/about">About Us</Link></li>
+              <li><Link className="hover:text-white" to="/terms">Terms</Link></li>
+              <li><Link className="hover:text-white" to="/privacy">Privacy</Link></li>
             </ul>
           </div>
 
@@ -47,9 +48,9 @@ export default function Footer(){
         <div className="mt-8 border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-slate-500">© {new Date().getFullYear()} SR Investment Platform. All rights reserved.</p>
           <div className="flex items-center gap-4 text-sm text-slate-400">
-            <a className="hover:text-white" href="#">Support</a>
-            <a className="hover:text-white" href="#">Contact</a>
-            <a className="hover:text-white" href="#">Security</a>
+            <Link className="hover:text-white" to="/support">Support</Link>
+            <Link className="hover:text-white" to="/contact">Contact</Link>
+            <Link className="hover:text-white" to="/kyc-security">Security</Link>
           </div>
         </div>
       </div>

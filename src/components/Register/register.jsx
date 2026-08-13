@@ -8,6 +8,7 @@ export default function Register(){
   const [step, setStep] = useState(1)
   const [sendingOtp, setSendingOtp] = useState(false)
   const [resendTimer, setResendTimer] = useState(0)
+  const [skipValidation, setSkipValidation] = useState(false)
 
   const [form, setForm] = useState(()=>({
     name:'', email:'', phone:'', password:'', terms:false, referral:'',
@@ -40,6 +41,7 @@ export default function Register(){
   const update = (patch)=> setForm(f => ({...f, ...patch}))
 
   const validateStep = (s)=>{
+    if(skipValidation) { setErrors({}); return true }
     const e = {}
     if(s===1){
       if(!form.name.trim()) e.name = 'Enter your full name'
@@ -125,6 +127,11 @@ export default function Register(){
         <div className="flex justify-between text-xs text-slate-500 mt-2">
           <div>Basic</div><div>Verify</div><div>KYC</div><div>Profile</div>
         </div>
+      </div>
+
+      <div className="flex items-center gap-3 mb-4">
+        <input id="skipValidation" type="checkbox" checked={skipValidation} onChange={e=>setSkipValidation(e.target.checked)} />
+        <label htmlFor="skipValidation" className="text-sm text-slate-600">Skip validation (developer/demo mode)</label>
       </div>
 
       {step===1 && (

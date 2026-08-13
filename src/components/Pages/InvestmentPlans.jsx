@@ -55,8 +55,9 @@ export default function InvestmentPlans(){
 
           <div className="mt-4">
             <label className="text-sm text-slate-600">Deposit amount</label>
-            <input type="range" min="50" max="100000" step="50" value={amount} onChange={e=>setAmount(e.target.value)} className="w-full mt-2" />
-            <input type="number" value={amount} onChange={e=>setAmount(e.target.value)} className="w-full mt-3 p-3 border rounded-lg text-lg font-semibold" />
+            <input type="range" min="200" max="100000" step="50" value={amount} onChange={e=>setAmount(e.target.value)} className="w-full mt-2" />
+            <input type="number" min={200} step={50} value={amount} onChange={e=>setAmount(e.target.value)} className="w-full mt-3 p-3 border rounded-lg text-lg font-semibold" />
+            <div className="mt-2 text-xs text-slate-500">Minimum deposit: <span className="font-semibold text-slate-800">$200</span>. Amount will be rounded to nearest $50.</div>
           </div>
 
           <div className="mt-4 grid grid-cols-2 gap-3">

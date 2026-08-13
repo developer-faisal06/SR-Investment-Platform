@@ -14,11 +14,17 @@ export default function InvestmentPlans(){
   const monthly = +(safeAmount * 0.07).toFixed(2)
 
   const [selectedPlan, setSelectedPlan] = useState('standard')
+  const [demoMode, setDemoMode] = useState(false)
 
   const deposit = (planKey)=>{
     const plan = plans.find(p=>p.key===planKey) || plans[1]
     const user = localStorage.getItem('sr_user')
     const payload = { amount: safeAmount, plan: plan.key, planTitle: plan.title }
+    if(demoMode){
+      // demo mode: go straight to checkout without auth
+      navigate('/checkout', { state: payload })
+      return
+    }
     if(user){
       // user exists — go to checkout with state
       navigate('/checkout', { state: payload })
@@ -31,10 +37,20 @@ export default function InvestmentPlans(){
 
   return (
     <main className="max-w-6xl mx-auto my-12 p-6 bg-white rounded-2xl shadow text-slate-800">
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h1 className="text-3xl font-extrabold mb-1">Investment Plans</h1>
+          <p className="text-sm text-slate-600">Choose a plan that fits your capital and return expectations. All plans pay a fixed 7% return every 30 days on active capital.</p>
+        </div>
+        <div className="flex items-center gap-3">
+          <label className="text-sm text-slate-600">Demo mode</label>
+          <input type="checkbox" checked={demoMode} onChange={e=>setDemoMode(e.target.checked)} />
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
-          <h1 className="text-3xl font-extrabold mb-3">Investment Plans</h1>
-          <p className="text-sm text-slate-600 mb-6">Choose a plan that fits your capital and return expectations. All plans pay a fixed 7% return every 30 days on active capital.</p>
+          <p className="text-sm text-rose-600 mb-4">Demo mode bypasses login and goes directly to checkout (no real payment).</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {plans.map(p=> (
